@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class buoi2_bai5 {
 
+    public static int timMin(int a, int b) {
+
+        if (a < b) {
+            return a;
+        }
+        return b;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("chanh: ");
@@ -24,10 +32,7 @@ public class buoi2_bai5 {
 //        }
         int B = b / 2;
         int C = c / 4;
-        if (B > C) {
-            System.out.println("=> Tong so qua toi da: " + 7 * C + "(Chanh: " + C + " ,Tao: " + 2 * C + ", Le: " + 4 * C + ")");
-        } else {
-            System.out.println("=> Tong so qua toi da: " + 7 * B + "(Chanh: " + B + " ,Tao: " + 2 * B + ", Le: " + 4 * B + ")");
-        }
+        int min = timMin(a, (timMin(B, C)));
+        System.out.println("=>Tong qua toi da: " + 7 * min + " (Chanh: " + min + " ,Tao: " + 2 * min + ", Le: " + 4 * min + ")");
     }
 }
