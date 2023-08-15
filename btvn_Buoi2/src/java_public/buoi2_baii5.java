@@ -2,7 +2,7 @@ package java_public;
 
 import java.util.Scanner;
 
-public class buoi2_bai5 {
+public class buoi2_baii5 {
 
     public static int timMin(int a, int b) {
 

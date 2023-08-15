@@ -21,7 +21,7 @@ public class buoi2_bai2 {
 
     }
 
-    private static float tinhBieuThucb(int n) {
+    public static float tinhBieuThucb(int n) {
         if (n == 1) {
             return 1;
         }
