@@ -76,4 +76,5 @@ public class SinhVien {
         System.out.printf("%-20s %-20s %-8s %-8s %-8s", maSinhVien, hoTen, diemToan, diemLy, diemHoa);
         System.out.println("");
     }
+    
 }
