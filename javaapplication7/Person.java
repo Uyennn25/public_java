@@ -5,8 +5,7 @@
  */
 package javaapplication7;
 
-import KiemTra.Address;
-import KiemTra.Person;
+
 import java.util.Scanner;
 
 /**
