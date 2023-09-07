@@ -12,42 +12,12 @@ import java.util.Scanner;
  *
  * @author ADMIN
  */
-public class Student extends Person {
-    private int id;
-    private Address address = new Address();
-    private double gpa;
+public class Person {
+    protected String name;
+    protected int age;
+    protected String gender;
 
-    public Student() {
-    }
-
-    public Student(int id, Address address, double gpa) {
-        this.id = id;
-        this.address = address;
-        this.gpa = gpa;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
+    public Person() {
     }
 
     public String getName() {
@@ -76,16 +46,12 @@ public class Student extends Person {
     
     public void input(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter id: ");
-        id = sc.nextInt();
-        System.out.println("Enter address: ");
-        address.input();
-        System.out.println("Enter gpa: ");
-        gpa = sc.nextDouble();
-        
-    }
-    public void output(){
-        System.out.printf("%-10s %-10s", id , gpa   );
-        address.output();
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
+        System.out.print("Enter age: ");
+        age = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter gender: ");
+        gender = sc.nextLine();
     }
 }
