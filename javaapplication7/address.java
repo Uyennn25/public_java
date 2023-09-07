@@ -23,6 +23,7 @@ public class address {
         this.district = district;
     }
 
+    
     public String getCity() {
         return city;
     }
@@ -39,17 +40,14 @@ public class address {
         this.district = district;
     }
     
-    
     public void input(){
         Scanner sc = new Scanner(System.in);
-        System.out.printf("Nhap ten thanh pho: ");
+        System.out.println("Enter city: ");
         city = sc.nextLine();
-        System.out.printf("Nhap disttrict: ");
+        System.out.println("Enter district: ");
         district = sc.nextLine();
     }
     public void output(){
-        System.out.println("city: " + city);
-        System.out.println("district: " + district);
+        System.out.printf("%-10s %-10s ", city , district );
     }
-    
 }

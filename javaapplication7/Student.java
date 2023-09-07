@@ -5,6 +5,7 @@
  */
 package javaapplication7;
 
+
 import java.util.Scanner;
 
 /**
@@ -13,22 +14,15 @@ import java.util.Scanner;
  */
 public class Student extends Person {
     private int id;
-    private address Address;
+    private Address address = new Address();
     private double gpa;
 
     public Student() {
     }
 
-    public Student(int id, address Address, double gpa) {
+    public Student(int id, Address address, double gpa) {
         this.id = id;
-        this.Address = Address;
-        this.gpa = gpa;
-    }
-
-    public Student(int id, address Address, double gpa, String name, int age, String genter) {
-        super(name, age, genter);
-        this.id = id;
-        this.Address = Address;
+        this.address = address;
         this.gpa = gpa;
     }
 
@@ -40,12 +34,12 @@ public class Student extends Person {
         this.id = id;
     }
 
-    public address getAddress() {
-        return Address;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddress(address Address) {
-        this.Address = Address;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public double getGpa() {
@@ -72,27 +66,28 @@ public class Student extends Person {
         this.age = age;
     }
 
-    public String getGenter() {
-        return genter;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenter(String genter) {
-        this.genter = genter;
-    }
-    public void input(){
-        Scanner sc = new Scanner(System.in);
-        System.out.printf("Nhap id: ");
-        id = sc.nextInt();
-        Address.input();
-        System.out.printf("Nhap gpa: ");
-        gpa = sc.nextDouble();
-    }
-    public void output(){
-        System.out.println("id: " + id);
-        System.out.println("address");
-        Address.output();
-        System.out.println("gpa: " + gpa);
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     
+    public void input(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter id: ");
+        id = sc.nextInt();
+        System.out.println("Enter address: ");
+        address.input();
+        System.out.println("Enter gpa: ");
+        gpa = sc.nextDouble();
+        
+    }
+    public void output(){
+        System.out.printf("%-10s %-10s", id , gpa   );
+        address.output();
+    }
 }
+
 

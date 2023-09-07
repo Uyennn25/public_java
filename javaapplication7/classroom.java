@@ -11,18 +11,14 @@ import java.util.Scanner;
  *
  * @author ADMIN
  */
-public class classroom {
-    private int classId;
-    private int numberOfstudent ;
-    private Student[] students;
-    private int n;
-    public classroom() {
-    }
 
-    public classroom(int classId, int numberOfstudent, Student[] students) {
-        this.classId = classId;
-        this.numberOfstudent = numberOfstudent;
-        this.students = students;
+public class Classroom {
+    private int classId;
+    private int numberOfStudent;
+    private Student[] a;
+    int n;
+
+    public Classroom() {
     }
 
     public int getClassId() {
@@ -33,48 +29,57 @@ public class classroom {
         this.classId = classId;
     }
 
-    public int getNumberOfstudent() {
-        return numberOfstudent;
+    public int getNumberOfStudent() {
+        return numberOfStudent;
     }
 
-    public void setNumberOfstudent(int numberOfstudent) {
-        this.numberOfstudent = numberOfstudent;
+    public void setNumberOfStudent(int numberOfStudent) {
+        this.numberOfStudent = numberOfStudent;
     }
 
     public Student[] getStudents() {
-        return students;
+        return a;
     }
 
     public void setStudents(Student[] students) {
-        this.students = students;
+        this.a = students;
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
     }
     
     public void input(){
-        Scanner sc= new Scanner(System.in);
-        int n;
-        System.out.println("nhap classid: ");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter classId: ");
         classId = sc.nextInt();
-        System.out.println("Nhap number of Student: " );
-        numberOfstudent = sc.nextInt();
-        System.out.println("Nhap danh sach sinh vien: ");
-        System.out.println("Nhap so luong sinh vien: ");
+        System.out.println("Enter number of student: ");
+        numberOfStudent = sc.nextInt();
+        System.out.println("Enter student: ");
+        System.out.println("Enter quantity student: ");
         n = sc.nextInt();
-        Student[] x = new Student[n];
+        a = new Student[n];
         for(int i=0 ; i<n ; i++){
-            System.out.println("Nhap thong tin sinh vien thu: " + (i+1) +": ");
-            Student a = new Student();
-            a.input();
-            x[i] = a;
+            System.out.println("Enter information student " +(i+1) +": ");
+            Student b = new Student();
+            b.input();
+            a[i] = b;
         }
-       
+        
     }
     public void output(){
-        
-        System.out.println("classId: " + classId);
-        System.out.println("number of student: " + numberOfstudent );
+        System.out.println("classId: " + classId );
+        System.out.println("number of student: " + numberOfStudent );
         System.out.println("Student: ");
-        for(int i= 0; i<n; i++){
-            students[i].output();
+        System.out.printf("%-10s %-10s %-10s %-10s%n", "ID" , "City" , "District", "Gpa");
+        for(int i=0 ; i< n; i++){
+            a[i].output();
+            System.out.println();
         }
+        
     }
 }
